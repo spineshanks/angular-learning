@@ -1,15 +1,20 @@
 import { Component, Input } from '@angular/core';
+import {Joke} from './joke';
 
 @Component({
   selector: 'joke',
-  template: `<h1>My Name is Ashish</h1>`,
-  styles: [`h1 { font-family: Lato; }`]
+  template: `
+  <div class="card card-block">
+<h4 class="card-title">{{data.setup}}</h4>
+<p class="card-text"
+[hidden]="data.hide">{{data.punchline}}</p>
+<a (click)="data.toggle()"
+class="btn btn-warning">Tell Me
+</a>
+</div>
+  `,
+  styles: [`h1 { font-family: Lato; }`],
 })
 export class JokeComponent {
-  setup: string;
-  punchline: string;
-  constructor() {
-  this.setup = "What did the cheese say when it looked in the mirror?";
-  this.punchline = "Halloumi (Hello Me)";
-  }
-  }
+  @Input('joke') data: Joke;
+}

@@ -10,6 +10,6 @@ import { JokeListComponent } from './jokelist.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent,JokeComponent,JokeListComponent ],
-  bootstrap:    [ JokeListComponent ]
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
