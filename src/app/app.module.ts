@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {JokeComponent} from './joke.component';
 import { JokeListComponent } from './jokelist.component';
-import {JokeFormComponent} from './jokeform.component';
+import {NgIfExampleComponent} from './ngifexample.component';
+import {NgForExampleComponent} from './ngforexample.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, JokeComponent, JokeListComponent ],
+  declarations: [ AppComponent, HelloComponent, JokeComponent, JokeListComponent, NgForExampleComponent,NgIfExampleComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
