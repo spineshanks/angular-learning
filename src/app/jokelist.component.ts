@@ -1,26 +1,29 @@
 import { Component, Input } from '@angular/core';
 import {Joke} from './joke';
-import {JokeFormComponent} from './jokeform.component';
-
 
 @Component({
   selector: 'joke-list',
   template: `
-  <joke-form (jokeCreated)="addJoke($event)"></joke-form>
-  <joke *ngFor="let j of jokes" [joke]="j"></joke>
+  <joke *ngFor="let j of jokes" [joke]="j">
+  <span class="setup">{{ j.setup }} ?</span>
+  <h1 class="punchline">{{ j.punchline }}</h1>
+</joke>
+<button type="button"
+  class="btn btn-success"
+  (click)="addJoke()">Add Joke
+</button>
+<button type="button"
+  class="btn btn-danger"
+  (click)="deleteJoke()">Clear Jokes
+</button>
   `,
 })
 export class JokeListComponent {
-  jokes: Joke[];
-  constructor() {
-    this.jokes = [
-      new Joke('Parent 1', 'Yeah this is Joke 1'),
-      new Joke('Parent 2', 'Yeah this is Joke 2'),
-      new Joke('Parent 3', 'Yeah this is joke 3'),
-    ];
+  jokes: Joke[] = [];
+  addJoke() {
+  this.jokes.unshift(new Joke("What did the cheese say when it looked in the mirror", "Hello-me (Halloumi)"));
   }
-
-  addJoke(joke) {
-    this.jokes.unshift(joke);
+  deleteJoke() {
+  this.jokes = []
   }
- }
+}
