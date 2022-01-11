@@ -3,4 +3,9 @@
   Start editing to see some magic happen :)
 </p>
 <h1>The list of Jokes</h1>
-<joke-list></joke-list>
+<joke-list>
+<joke [joke]="joke">
+<span class="setup">{{ joke.setup }}?</span>
+<h1 class="punchline">{{ joke.punchline }}</h1>
+</joke>
+</joke-list>

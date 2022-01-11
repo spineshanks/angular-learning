@@ -18,7 +18,7 @@ import {Joke} from './joke';
 @Component({
   selector: 'joke',
   template: `
-  <div class="card card-block">
+<div class="card card-block">
   <h4 class="card-title">
   <ng-content select=".setup"></ng-content>
   </h4>
@@ -29,9 +29,7 @@ import {Joke} from './joke';
   <a class="btn btn-primary"
   (click)="data.toggle()">Tell Me
   </a>
-</div>
-  `,
-  styles: [`h1 { font-family: Lato; }`],
+</div>`
 })
 
 export class JokeComponent implements OnChanges,
@@ -42,7 +40,7 @@ AfterContentChecked,
 AfterViewInit,
 AfterViewChecked,
 OnDestroy {
-@Input('joke') data: Joke;
+  @Input('joke') data: Joke;
 constructor() {
 console.log(`new - data is ${this.data}`);
 }

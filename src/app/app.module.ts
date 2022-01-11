@@ -10,7 +10,7 @@ import {JokeFormComponent} from './jokeform.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, JokeComponent, JokeListComponent,JokeFormComponent ],
+  declarations: [ AppComponent, HelloComponent, JokeComponent, JokeListComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
